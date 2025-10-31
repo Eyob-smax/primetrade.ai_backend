@@ -6,7 +6,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:5173',
-      'https://primetradeaibackend-production.up.railway.app/',
+      'https://primetrade-ai-frontend.vercel.app',
     ],
     credentials: true,
   });
