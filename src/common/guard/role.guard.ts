@@ -38,8 +38,7 @@ export class RoleGuard implements CanActivate {
     const token = request.cookies?.['access_token'];
     const secret =
       this.config.get<string>('JWT_ACCESS_SECRET') ||
-      process.env.JWT_ACCESS_SECRET ||
-      '63e454c82dcd9217f2e6e6e2799b1f7d';
+      process.env.JWT_ACCESS_SECRET;
 
     if (!token)
       throw new UnauthorizedException('Authentication token not found.');

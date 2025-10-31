@@ -50,12 +50,10 @@ export class AuthService {
 
       const accessSecret =
         this.config.get<string>('JWT_ACCESS_SECRET') ||
-        process.env.JWT_ACCESS_SECRET ||
-        '63e454c82dcd9217f2e6e6e2799b1f7d';
+        process.env.JWT_ACCESS_SECRET;
       const refreshSecret =
         this.config.get<string>('JWT_REFRESH_SECRET') ||
-        process.env.JWT_REFRESH_SECRET ||
-        '96f062df422c83e4ea9a7c598cfde311';
+        process.env.JWT_REFRESH_SECRET;
       if (!accessSecret || !refreshSecret)
         throw new InternalServerErrorException('JWT secrets not configured');
 
@@ -107,8 +105,7 @@ export class AuthService {
     try {
       const refreshSecret =
         this.config.get<string>('JWT_REFRESH_SECRET') ||
-        process.env.JWT_REFRESH_SECRET ||
-        '96f062df422c83e4ea9a7c598cfde311';
+        process.env.JWT_REFRESH_SECRET;
       if (!refreshSecret) {
         throw new InternalServerErrorException(
           'Jrt refresh token not configured correctly!',
@@ -148,8 +145,7 @@ export class AuthService {
       }
       const accessSecret =
         this.config.get<string>('JWT_ACCESS_SECRET') ||
-        process.env.JWT_ACCESS_SECRET ||
-        '63e454c82dcd9217f2e6e6e2799b1f7d';
+        process.env.JWT_ACCESS_SECRET;
       if (!accessSecret) {
         throw new InternalServerErrorException(
           'Jwt access secret key is not configured',
@@ -230,16 +226,14 @@ export class AuthService {
 
       const accessSecret =
         this.config.get<string>('JWT_ACCESS_SECRET') ||
-        process.env.JWT_ACCESS_SECRET ||
-        '63e454c82dcd9217f2e6e6e2799b1f7d';
+        process.env.JWT_ACCESS_SECRET;
       const refreshSecret =
         this.config.get<string>('JWT_REFRESH_SECRET') ||
-        process.env.JWT_REFRESH_SECRET ||
-        '96f062df422c83e4ea9a7c598cfde311';
+        process.env.JWT_REFRESH_SECRET;
 
       if (!accessSecret || !refreshSecret) {
         throw new InternalServerErrorException(
-          'Jwt not configured successfully!',
+          'Jwt not coonfigured successfully!',
         );
       }
 
